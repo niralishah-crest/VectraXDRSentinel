@@ -1099,7 +1099,7 @@
             "FunctionAppName": "[variables('FunctionName')]",
             "AzureResourceGroupName": "[resourceGroup().name]",
             "AzureSubscriptionId": "[subscription().subscriptionId]",
-            "WEBSITE_RUN_FROM_PACKAGE": "https://github.com/shashankshah-crest/vectra-2.0/raw/refs/heads/main/VectraXDR0601.zip"
+            "WEBSITE_RUN_FROM_PACKAGE": "https://github.com/niralishah-crest/VectraXDRSentinel/raw/refs/heads/main/VectraXDRDetections.zip"
           }
         }
       ]
@@ -1180,4 +1180,5 @@
       "value": "[reference(resourceId('Microsoft.Insights/dataCollectionRules', variables('dataRuleName')), '2022-06-01').immutableId]"
     }
   }
+
 }
