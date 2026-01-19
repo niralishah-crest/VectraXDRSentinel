@@ -1087,7 +1087,31 @@
           {
             "tenantId": "[parameters('TenantID')]",
             "objectId": "[reference(resourceId('Microsoft.Web/sites', variables('FunctionName')), '2019-08-01', 'full').identity.principalId]",
-            "objectId": "[parameters('AzureEntraObjectID')]"
+            "permissions": {
+              "secrets": [
+                "get",
+                "list",
+                "set",
+                "delete"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.KeyVault/vaults/accessPolicies",
+      "apiVersion": "2016-10-01",
+      "name": "[concat(parameters('KeyVaultName'), '/add')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', variables('FunctionName'))]",
+        "[resourceId('Microsoft.KeyVault/vaults', parameters('KeyVaultName'))]"
+      ],
+      "properties": {
+        "accessPolicies": [
+          {
+            "tenantId": "[parameters('TenantID')]",
+            "objectId": "[parameters('AzureEntraObjectID')]",
             "permissions": {
               "secrets": [
                 "get",
@@ -1153,6 +1177,7 @@
   }
 
 }
+
 
 
 
