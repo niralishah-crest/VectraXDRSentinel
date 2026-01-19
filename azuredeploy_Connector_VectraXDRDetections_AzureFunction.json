@@ -1087,6 +1087,7 @@
           {
             "tenantId": "[parameters('TenantID')]",
             "objectId": "[reference(resourceId('Microsoft.Web/sites', variables('FunctionName')), '2019-08-01', 'full').identity.principalId]",
+            "objectId": "[parameters('AzureEntraObjectID')]"
             "permissions": {
               "secrets": [
                 "get",
@@ -1152,5 +1153,6 @@
   }
 
 }
+
 
 
