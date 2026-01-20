@@ -1018,7 +1018,6 @@
       "dependsOn": [
         "[resourceId('Microsoft.Storage/storageAccounts', tolower(variables('FunctionName')))]",
         "[resourceId('Microsoft.Insights/components', variables('FunctionName'))]",
-        "[resourceId('Microsoft.KeyVault/vaults', parameters('KeyVaultName'))]"
       ],
       "kind": "functionapp,linux",
       "identity": {
@@ -1127,6 +1126,7 @@
   }
 
 }
+
 
 
 
