@@ -1017,7 +1017,7 @@
       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[resourceId('Microsoft.Storage/storageAccounts', tolower(variables('FunctionName')))]",
-        "[resourceId('Microsoft.Insights/components', variables('FunctionName'))]",
+        "[resourceId('Microsoft.Insights/components', variables('FunctionName'))]"
       ],
       "kind": "functionapp,linux",
       "identity": {
@@ -1126,6 +1126,7 @@
   }
 
 }
+
 
 
 
